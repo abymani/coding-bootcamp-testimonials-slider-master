@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+:root {
+
+
+--Dark-Blue: hsl(240, 38%, 20%);
+--Grayish-Blue: hsl(240, 18%, 77%);
+
+
+--fs: 32px;
+--ff-inter: 'Inter', sans-serif;
+--fw-regular:300;
+--fw-semibold:500;
+--fw-bold:700;
+
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0;
+    font-family: var(--ff-inter);
+    font-weight: var(--fw-regular);
+}
+
+img {
+    max-width: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0% 110%;
+}
+
+main {
+    width: 90%;
+    padding-block: 2rem;
+
+}
+    main >div{       
+        display: none;
+        flex-direction: column;
+        gap:2rem;
+    }
+    main >div:first-child {
+        display: flex;
+    }
+    .image-container {
+        background-image: url(./images/pattern-bg.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+        .image-container img {
+            padding: clamp(2rem,4vw,5rem);
+            width: min(80vw,20rem);
+           
+        }
+        .btn-container {
+            position: absolute;
+            display: flex;
+            bottom: 6%;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 3px 0px 15px 5px hsl(240, 38%, 20%,0.5);
+        }
+        .btn {    
+            height: 2rem;
+            width: 2rem;
+            border: 0;
+            background-color: hsl(0, 0%, 100%);    
+            background-size: 0.5rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+            .btn:hover {
+                scale: 1.4;
+                background-color: hsla(0, 3%, 94%, 0.858);
+            }
+            .prev-btn {               
+                background-image: url(./images/icon-prev.svg);
+            }
+            .next-btn {               
+                background-image: url(./images/icon-next.svg);
+            }
+    article {
+        padding-block: 1.5rem;
+        background-image: url(./images/pattern-quotes.svg);
+        background-repeat: no-repeat;
+        background-size: 3rem;
+        background-position: center top;
+        color: var(--Dark-Blue);
+        text-align: center;
+        font-size: 16px;
+    }
+        article blockquote {
+            font-size: 1em;
+            margin-bottom: 1rem;
+          
+        }
+        article .name {
+            font-size: 1em;
+            font-weight: var(--fw-bold);
+        }
+        article .job {
+            font-size: 1em;
+            font-weight: var(--fw-semibold);
+            color: var(--Grayish-Blue);
+        }
+
+
+footer {
+    position: absolute;
+    bottom: 1rem; 
+}
+
+@media screen and (min-width:700px) {
+    body {
+        height: 100vh;
+        background-position: 0% 150%;
+    }
+    main {
+        padding: auto;
+        width: clamp(50rem,85vw,80rem);
+    }
+        main >div {
+            flex-direction: row-reverse;
+            position: relative;
+        }
+            .image-container img {
+                width: clamp(20rem,50vw,60rem);
+                padding: clamp(2rem,6vw,8rem);
+            }
+            .btn-container {
+                bottom: 9%;
+                left: 25%;
+            }
+        article {
+            padding-block: clamp(0.5rem,5vw,4.5rem);
+            padding-inline: 2rem;
+            position: absolute;
+            font-size: clamp(1rem,2vw,2rem);
+            width: 55%;
+            left: 0;
+            top: clamp(1rem,10vw,10rem);
+            text-align: left;
+            background-size: 8rem;
+            background-position: 20% 0%;
+        }
+            article blockquote {
+                line-height: clamp(1rem,3vw,3rem);
+                letter-spacing: 1px;
+            }
+            article .name-job {
+                margin-top: 3rem;
+                display: flex;
+                gap: 1rem;
+            }
+
+}
+
+
+
+
+
+   
